@@ -6,11 +6,9 @@ import { server } from "../config";
 
 import Layout from "../components/Layout";
 import CardArticle from "../components/CardArticle";
+import CardLaunch from "../components/CardLaunch";
 
 export default function Home({ articles, launcher }) {
-  console.log(articles);
-  console.log(launcher, "launcher");
-
   return (
     <>
       <Head>
@@ -28,18 +26,9 @@ export default function Home({ articles, launcher }) {
             </header>
 
             {launcher.map((lanch, index) => (
-              <Card key={index}>
-                <div className="row">
-                  <div className="col-md-auto">
-                    <img src={lanch.image_url} alt="" width={100} />
-                  </div>
-                  <div className="col-md-8 py-3 text-center">
-                    <h5>{lanch.details}</h5>
-                    <h6>{lanch.launcher_config.full_name}</h6>
-                    <Countdown date={Date.now() + 1000000}></Countdown>
-                  </div>
-                </div>
-              </Card>
+              <div key={index}>
+                <CardLaunch lanch={lanch} />
+              </div>
             ))}
           </section>
           <section>
@@ -68,8 +57,8 @@ const Card = styled.div`
   margin: 2em 0;
   border-radius: 12px;
   img {
-    width: 250px;
-    height: 300px;
+    width: 220px;
+    height: 250px;
     object-fit: cover;
     border-top-left-radius: 12px;
     border-bottom-left-radius: 12px;
