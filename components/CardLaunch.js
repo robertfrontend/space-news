@@ -6,16 +6,24 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import the 
 import { faInfoCircle, faPlay, faShareSquare } from "@fortawesome/free-solid-svg-icons"; // import the icons you need
 
 export default function CardLaunch({ lanch }) {
+  console.log(lanch.window_start.toLocaleString())
+
+
   return (
     <Card>
-      <div className="row">
-        <div className="col-md-auto">
+      <div className="row align-items-center">
+        <div className="col-md-auto col-lg-4">
           <img src={lanch.image} alt="" width={100} />
         </div>
-        <div className="col-md-9 py-3 text-center">
-          <h5>{lanch.name}</h5>
+        <div className="col-md-9 col-lg-8 py-3 text-center">
+          <h3>{lanch.name}</h3>
           <h6>{lanch.launch_service_provider.name}</h6>
-          <CountDown lanzamiento={lanch.net}/>
+          <h6> {lanch.window_start} </h6>
+          {
+            lanch.net && (
+              <CountDown lanzamiento={lanch.net}/>
+            )
+          }
           <div className="row">
               <div className="col-md-4">
                 <button><FontAwesomeIcon icon={faPlay} className="mx-2" />Watch</button>
@@ -37,19 +45,20 @@ export default function CardLaunch({ lanch }) {
 }
 
 const Card = styled.div`
-  box-shadow: 0px 0px 10px #adadadbe;
+  box-shadow: 0px 0px 10px #000000bd;
   width: 100%;
   margin: 4em 0;
   border-radius: 12px;
   img {
-    width: 220px;
-    height: 250px;
+    width: 100%;
+    height: 400px;
     object-fit: cover;
     border-top-left-radius: 12px;
     border-bottom-left-radius: 12px;
   }
-  h5 {
+  h3 {
     font-weight: bold;
+    padding: 0 1em;
   }
   h6 {
     color: #6c5ce7;
@@ -62,7 +71,7 @@ const Card = styled.div`
     background-color: transparent;
     font-weight: bold;
     outline: none;
-    color: #2d3436;
+    color: white;
   }
   a {
       text-decoration: none;
@@ -73,6 +82,6 @@ const Card = styled.div`
     background-color: transparent;
     font-weight: bold;
     outline: none;
-    color: #2d3436;
+    color: white;
   }
 `;

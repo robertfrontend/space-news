@@ -31,18 +31,18 @@ const CardNews = styled.div`
   img {
     width: 100%;
     border-radius: 12px;
-    box-shadow: 0px 8px 10px #2d343671;
+    box-shadow: 0px 8px 10px #00000070;
   }
   h5 {
     padding-top: 1em;
     font-weight: 700;
-    color: #2d3436;
+    color: white;
   }
   h6 {
     color: #6c5ce7;
   }
   p {
-    color: #636e72;
+    color: #b2bec3;
   }
   a {
     text-decoration: none;

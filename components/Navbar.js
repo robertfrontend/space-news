@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export default function Navbar() {
+
   return (
     <Content>
       <h1>
@@ -30,7 +31,11 @@ const Content = styled.nav`
   }
   p {
     font-size: 1.2em;
-    color: #2d3436;
+    color: white;
     font-weight: 600;
+  }
+  button{
+    border: none;
+    background-color:white;
   }
 `;

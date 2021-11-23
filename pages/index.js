@@ -24,11 +24,11 @@ export default function Home({ articles, launcher }) {
               </h3>
             </header>
 
-            {launcher.map((lanch, index) => (
-              <div key={index}>
-                <CardLaunch lanch={lanch} />
-              </div>
-            ))}
+              {launcher.map((lanch, index) => (
+                <div key={index}>
+                  <CardLaunch lanch={lanch} />
+                </div>
+              ))}
           </section>
           <section>
             <header>
@@ -50,26 +50,6 @@ export default function Home({ articles, launcher }) {
   );
 }
 
-const Card = styled.div`
-  box-shadow: 0px 5px 10px #dfe6e9;
-  width: 100%;
-  margin: 2em 0;
-  border-radius: 12px;
-  img {
-    width: 220px;
-    height: 250px;
-    object-fit: cover;
-    border-top-left-radius: 12px;
-    border-bottom-left-radius: 12px;
-  }
-  h5 {
-    font-weight: bold;
-  }
-  h6 {
-    color: #6c5ce7;
-    font-weight: 700;
-  }
-`;
 
 const Content = styled.div`
   section {
